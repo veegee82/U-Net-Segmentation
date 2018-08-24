@@ -14,7 +14,7 @@ class Generator_UNet_Params(IModel_Params):
     def __init__(self,
                  activation='relu',
                  normalization='IN',
-                 filter_dim=16,
+                 filter_dim=64,
                  loss_name='dice',
                  depth=3,
                  generator='Segmentation',
@@ -241,8 +241,8 @@ class Generator_UNet_Model(IModel):
                                                    probs=pixel_wise_softmax(self.logits))
             self.summary.append(tf.summary.scalar("pixelwise_cross_entropy_loss", pixel_wise_loss))
         else:
-            loss = cross_entropy_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=tf.layers.flatten(self.logits),
-                                                                                                  labels=tf.layers.flatten(Y_true)))
+            loss = cross_entropy_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=self.logits,
+                                                                                                  labels=Y_true))
             self.summary.append(tf.summary.scalar("cross_entropy_loss", cross_entropy_loss))
 
         # Accuracy for train and test set

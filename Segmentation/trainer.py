@@ -30,7 +30,7 @@ class Trainer_Params(ITrainer_Params):
         self.epoch = 10000
         self.batch_size = 8
         self.decay = 0.999
-        self.step_decay = 100
+        self.step_decay = 500
         self.beta1 = 0.9
         self.learning_rate_G = 0.0001
         self.use_tensorboard = True
