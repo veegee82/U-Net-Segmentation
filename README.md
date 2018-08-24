@@ -1,51 +1,55 @@
-## CycleGAN
+## U-Net Segmentation
 
-"Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks"
+"U-Net: Convolutional Networks for Biomedical Image Segmentation"
 
-Paper: https://arxiv.org/pdf/1703.10593.pdf
+Paper: https://arxiv.org/pdf/1505.04597.pdf
 
-Abstract:
+#### Abstract
+There is large consent that successful training of deep networks
+requires many thousand annotated training samples. In this paper,
+we present a network and training strategy that relies on the strong
+use of data augmentation to use the available annotated samples more
+efficiently. The architecture consists of a contracting path to capture
+context and a symmetric expanding path that enables precise localization.
+We show that such a network can be trained end-to-end from very
+few images and outperforms the prior best method (a sliding-window
+convolutional network) on the ISBI challenge for segmentation of neuronal
+structures in electron microscopic stacks. Using the same network
+trained on transmitted light microscopy images (phase contrast
+and DIC) we won the ISBI cell tracking challenge 2015 in these categories
+by a large margin. Moreover, the network is fast. Segmentation
+of a 512x512 image takes less than a second on a recent GPU. The full
+implementation (based on Caffe) and the trained networks are available
+at http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net
+.
 
-Image-to-image translation is a class of vision and graphics problems where the goal is to learn the mapping between an input image and an output image using a training set of aligned image pairs. However, for many tasks, paired training data will not be available. We present an approach for learning to translate an image from a source domain X to a target domain Y in the absence of paired examples. Our goal is to learn a mapping G:X→Y such that the distribution of images from G(X) is indistinguishable from the distribution Y using an adversarial loss. Because this mapping is highly under-constrained, we couple it with an inverse mapping F:Y→X and introduce a cycle consistency loss to push F(G(X))≈X (and vice versa). Qualitative results are presented on several tasks where paired training data does not exist, including collection style transfer, object transfiguration, season transfer, photo enhancement, etc. Quantitative comparisons against several prior methods demonstrate the superiority of our approach.
-
-## Modifications
-* Modify the ResNet-Generator with recursive residual blocks like in the DRRN. http://cvlab.cse.msu.edu/pdfs/Tai_Yang_Liu_CVPR2017.pdf
-* Option to use an U-Net with skip connections.
-* An an perceptual loss witch is extracted and calculated from the discriminator network of the corresponding domain A or B. 
 
 ## Results
 * Comming soon
 
-## Pre-requiremtents
-* tensorflow >= 1.8 
-* pil 
-* numpy 
-
 ## Installation tf_base package
 1. Clone the repository
 ```
-$ git clone git@github.com:Shumway82/tf_core.git
+$ git clone https://github.com/Shumway82/tf_base.git
 ```
 2. Go to folder
 ```
-$ cd tf_core
+$ cd tf_base
 ```
 3. Install with pip3
-```
-$ pip3 install tfcore
-or for editing the repository 
+``` 
 $ pip3 install -e .
 ```
 
-## Install CycleGAN package
+## Install U-Net-Segmentation package
 
 1. Clone the repository
 ```
-$ git@github.com:Shumway82/CycleGAN.git
+$ https://github.com/Shumway82/U-Net-Segmentation.git
 ```
 2. Go to folder
 ```
-$ cd CycleGAN
+$ cd Binary-Classification
 ```
 3. Install with pip3
 ```
@@ -56,10 +60,10 @@ $ pip3 install -e .
 
 1. Training
 ```
-$ python pipeline_trainer.py --dataset "../horse2zebra/" --config_path "../config/" 
+$ python pipeline_trainer.py --dataset "../Data/" --loss "dice"
 ```
 
 2. Inferencing
 ```
-$ python pipeline_inferencer.py --dataset "../horse2zebra/testA" --outdir ../Results/Horse2Zebra_AtoB" --model_dir ../pretrained_models/generator/Horse2Zebra/"
+$ python pipeline_inferencer.py --dataset "../Data/" --model_dir "Models_dice" 
 ```
