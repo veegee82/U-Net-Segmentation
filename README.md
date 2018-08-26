@@ -1,6 +1,6 @@
-# dida.do Machine Learning Scientist Hiring Challenge
+# dida.do - Machine Learning Scientist - Hiring Challenge
 
-There are 30 satellite pictures of houses and 25 corresponding labels that indicate the roofs. The training set contains of 25 labeled images and the test set is unlabeled. The task is to train a neural network which predicts the roofs of the house based on the trainign sets. 
+There are 30 satellite pictures of houses and 25 corresponding labels that indicate the roofs. The training set contains of 25 labeled images and the test set is unlabeled. The task is to train a neural network which predicts the roofs of the house based on the training sets. 
 
 ## Approuch
 
@@ -60,7 +60,7 @@ Hyperparameter: Batch-Size = 8, instance normalization, Cyclic-Learningrate [1e-
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/predictions/dice/mask_000004.png)
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/predictions/dice/image_000004.png)
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/test_X/553.png)
-Refernece: https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
+#### Refernece: https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
 
 #### Pixelwise-Softmax
 
@@ -83,7 +83,7 @@ Refernece: https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/predictions/pixel/mask_000004.png)
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/predictions/pixel/image_000004.png)
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/test_X/553.png)
-Reference: https://arxiv.org/pdf/1505.04597.pdf
+#### Reference: https://arxiv.org/pdf/1505.04597.pdf
 
 #### Softmax
 
@@ -109,11 +109,11 @@ Reference: https://arxiv.org/pdf/1505.04597.pdf
 
 #### Accuracy
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/images/accuracy.png)
-Accuracy for train(left) and test-set(right) 
+##### Accuracy for train(left) and test-set(right) 
 
 #### Intersection of Union IOU
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/images/iou.png)
-Intersection of Union(IOU) for train(left) and test-set(right) 
+##### Intersection of Union(IOU) for train(left) and test-set(right) 
 
 ## Installation tf_base package
 1. Clone the repository
