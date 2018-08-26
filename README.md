@@ -37,7 +37,7 @@ at http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net.
 
 The results are produced under the following conditions:
 
-Hyperparameter: Batch-Size = 8, instance normalization, Cyclic-Learningrate [1e-4,..., 1e-5], epochs = 10000, Data augumentation = flipping [horizontal, vertical] and rotation [0,...,360], Adam with beta1 = 0.9, Filter size of first conv-layer = 64, Unet-depth = 3  
+Hyperparameter: Batch-Size = 8, instance normalization, Cyclic-Learningrate [1e-4,..., 1e-5], epochs = 10000, Data augumentation = flipping [horizontal, vertical] and rotation [0,...,360], Adam with beta1 = 0.9, Filter size of first conv-layer = 64, Unet-depth = 5 
 
 #### DICE
 
