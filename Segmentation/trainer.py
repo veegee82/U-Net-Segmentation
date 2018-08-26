@@ -43,7 +43,12 @@ class Trainer_Params(ITrainer_Params):
         # U-Net Params
         self.depth = 5
         self.filter_dim = 64
-        self.loss = loss
+        if loss is 0:
+            self.loss = 'dice'
+        elif loss is 1:
+            self.loss = 'pixelwise_softmax'
+        else:
+            self.loss = 'softmax'
 
         self.use_pretrained_generator = True
         self.pretrained_generator_dir = "../../../../pretrained_models/generator/"

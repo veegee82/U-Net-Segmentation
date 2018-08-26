@@ -236,14 +236,17 @@ class Generator_UNet_Model(IModel):
         if self.params.loss_name is 'dice':
             loss = dice_loss = loss_dice(Y_true, self.probs)
             self.summary.append(tf.summary.scalar("dice_loss", dice_loss))
+            print (' [*] Dice-Loss')
         elif self.params.loss_name is 'pixelwise_softmax':
             loss = pixel_wise_loss = cross_entropy(label=Y_true,
                                                    probs=pixel_wise_softmax(self.logits))
             self.summary.append(tf.summary.scalar("pixelwise_cross_entropy_loss", pixel_wise_loss))
+            print(' [*] Pixelwise Softmax-Loss')
         else:
             loss = cross_entropy_loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=self.logits,
                                                                                                   labels=Y_true))
             self.summary.append(tf.summary.scalar("cross_entropy_loss", cross_entropy_loss))
+            print(' [*] Softmax-Loss')
 
         # Accuracy for train and test set
         self.summary.append(tf.summary.scalar("accuracy", accuracy(Y, self.prediction)))

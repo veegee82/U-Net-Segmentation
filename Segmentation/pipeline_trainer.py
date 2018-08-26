@@ -104,7 +104,7 @@ class Training_Pipeline(IPipeline_Trainer):
 flags = gflags.FLAGS
 gflags.DEFINE_string("config_path", '', "Path for config files")
 gflags.DEFINE_string("dataset", "../Data/", "Dataset path")
-gflags.DEFINE_string("loss", "pixelwise_softmax", "Dataset path")
+gflags.DEFINE_integer("loss", 2, "Dataset path")
 gflags.DEFINE_integer("gpu", 0, "Dataset path")
 
 def main():

@@ -47,8 +47,8 @@ class Pipeline_Inferencer(IPipeline_Inferencer):
 # flags = tf.app.flags
 flags = gflags.FLAGS
 gflags.DEFINE_string("dataset", "../Data/", "Dataset path")
-gflags.DEFINE_string("outdir", "../Data/predictions", "Output path")
-gflags.DEFINE_string("model_dir", "../Model_dida", "Model directory")
+gflags.DEFINE_string("outdir", "../Data/predictions/softmax", "Output path")
+gflags.DEFINE_string("model_dir", "../softmax", "Model directory")
 
 def main():
     flags(sys.argv)
@@ -71,7 +71,7 @@ def main():
 
         img_out = pipeline.run()
         if img_out is not None:
-            filename = get_filename(count, 'image_')
+            filename = get_filename(count, 'mask_')
             imageio.imwrite(os.path.join(flags.outdir, filename), img_out)
             print(' [*] save file ' + filename)
         count += 1
