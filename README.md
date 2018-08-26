@@ -31,7 +31,7 @@ implementation (based on Caffe) and the trained networks are available
 at http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net.
 
 ![bad](http://deeplearning.net/tutorial/_images/unet.jpg)
-Figure 1: U-Net architecture
+#### Figure 1: U-Net architecture
 
 ## Results
 
@@ -60,7 +60,7 @@ Hyperparameter: Batch-Size = 8, instance normalization, Cyclic-Learningrate [1e-
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/predictions/dice/mask_000004.png)
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/predictions/dice/image_000004.png)
 ![bad](https://github.com/Shumway82/U-Net-Segmentation/blob/master/Data/test_X/553.png)
-#### Refernece: https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
+#### Reference: https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient
 
 #### Pixelwise-Softmax
 
