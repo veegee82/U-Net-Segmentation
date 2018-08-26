@@ -13,7 +13,7 @@ class Trainer_Params(ITrainer_Params):
     def __init__(self,
                  image_size,
                  params_path='',
-                 loss=0,
+                 loss='dice', # 'dice', 'pixelwise_softmax', 'softmax'
                  gpu=0,
                  load=True,
                  ):
@@ -43,17 +43,12 @@ class Trainer_Params(ITrainer_Params):
         # U-Net Params
         self.depth = 5
         self.filter_dim = 64
-        if loss is 0:
-            self.loss = 'dice'
-        elif loss is 1:
-            self.loss = 'pixelwise_softmax'
-        else:
-            self.loss = 'softmax'
+        self.loss = loss
 
         self.use_pretrained_generator = True
         self.pretrained_generator_dir = "../../../../pretrained_models/generator/"
 
-        self.experiment_name = "SRResNET_GAN_" + self.loss
+        self.experiment_name = "U-NET_" + self.loss
         self.checkpoint_restore_dir = ''
         self.sample_dir = 'samples'
         self.load_checkpoint = False
@@ -69,11 +64,7 @@ class Trainer_Params(ITrainer_Params):
             else:
                 self.save(params_path)
 
-        self.root_dir = "/mnt/datadrive/silvio"
-        if not os.path.exists(self.root_dir):
-            self.root_dir = "../../../Results/Local"
-        else:
-            self.use_tensorboard = False
+        self.root_dir = "../../../Results/Local"
 
     def load(self, path):
         """ Load Parameter
