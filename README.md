@@ -1,12 +1,4 @@
-# dida.do - Machine Learning Scientist - Hiring Challenge
-
-There are 30 satellite pictures of houses and 25 corresponding labels that indicate the roofs. The training set contains of 25 labeled images and the test set is unlabeled. The task is to train a neural network which predicts the roofs of the house based on the training sets. 
-
-## Approuch
-
-To solve this task, a U-Net architecture was chosen. The architecture was shown in Figure 1. Since very few training images exist, data augmentation was used. For this, the image was randomly flipped horizontally and vertically and randomly rotated at an angle of one degree. As loss-function tree different loss functions, the dice-loss and pixelwise-softmax and the softmax of tensorflow, are used and compared. 
-
-### U-Net Segmentation
+# U-Net Segmentation
 
 "U-Net: Convolutional Networks for Biomedical Image Segmentation"
 
@@ -32,6 +24,14 @@ at http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net.
 
 ![bad](http://deeplearning.net/tutorial/_images/unet.jpg)
 #### Figure 1: U-Net architecture
+
+## Challenge
+
+There are 30 satellite pictures of houses and 25 corresponding labels that indicate the roofs. The training set contains of 25 labeled images and the test set is unlabeled. The task is to train a neural network which predicts the roofs of the house based on the training sets. 
+
+## Approuch
+
+To solve this task, a U-Net architecture was chosen. The architecture was shown in Figure 1. Since very few training images exist, data augmentation was used. For this, the image was randomly flipped horizontally and vertically and randomly rotated at an angle of one degree. As loss-function tree different loss functions, the dice-loss and pixelwise-softmax and the softmax of tensorflow, are used and compared. 
 
 ## Results
 
